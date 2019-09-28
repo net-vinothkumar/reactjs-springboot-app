@@ -50,10 +50,12 @@ class ProductComponent extends Component {
             targetDate: values.targetDate
         }
 
-        if (this.state.id === -1) {
+        if (this.state.id === '-1') {
+            console.log('create product inside product component..');
             ProductService.createProduct(product)
                 .then(() => this.props.history.push('/products'))
         } else {
+            console.log('update product inside product component..');
             ProductService.updateProduct(this.state.id, product)
                 .then(() => this.props.history.push('/products'))
         }
