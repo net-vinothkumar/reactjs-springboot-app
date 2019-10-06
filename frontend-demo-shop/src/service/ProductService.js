@@ -14,6 +14,7 @@ class ProductService {
     }
 
     deleteProduct(id) {
+        console.log('delete product');
         return axios.delete(`${DEMO_SHOP_API_URL}/products/${id}`);
     }
 
